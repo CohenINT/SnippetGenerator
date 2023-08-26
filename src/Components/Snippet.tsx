@@ -29,8 +29,17 @@ export const Snippet: React.FC<SnippetProps> = (props) => {
 
   const HandleCopyClick = (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 
-    debugger;
-    navigator.clipboard.writeText(props.CssProperties.toString())
+    let text = "";
+    props.CssProperties.forEach(p => {
+      if (p.comments != null && p.comments !== "")
+      {
+        text += `  /* ${[p.comments]} */\n`;
+      }
+      text += `  ${p.cssProp}:  ${p.cssValue};\n`;
+    });
+
+    document.body.focus();
+    navigator.clipboard.writeText(text)
       .then(res => {
         console.log(`Data was copied`);
       })
@@ -55,6 +64,9 @@ export const Snippet: React.FC<SnippetProps> = (props) => {
       <button onClick={HandleCopyClick.bind(this)} className="copy_btn">
         Copy
       </button>
+      <div id="snippet_code">
+
+      </div>
     </div>
   );
 };
