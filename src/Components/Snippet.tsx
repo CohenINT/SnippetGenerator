@@ -16,7 +16,7 @@ export const Snippet: React.FC<SnippetProps> = (props) => {
       return (
         <>
          <span className="property_style">{`  ${p.cssProp}:`}</span>
-         <span className="property_value">{`${p.cssValue};`}</span>
+         <span className="property_value">{`  ${p.cssValue};`}</span>
          { i < props.CssProperties.length-1 ? "\n" : ""}
         </>);
     });
@@ -32,22 +32,8 @@ export const Snippet: React.FC<SnippetProps> = (props) => {
           <span className="class_style">{".container "}</span>
           <span className="property_style">{"{"}</span>
           {"\n"}
-          <span className="property_style">{"  background-color:"} </span>
-          <span className="property_value">{"red;"}</span>
-          {"\n"}
-          <span className="property_style">{"  width:"}</span>
-          <span className="property_value">{"auto;"}</span>
-          {"\n"}
-          <span className="property_style">{"  height:"}</span>
-          <span className="property_value">{"auto;"}</span>
-          {"\n"}
-          <span className="property_style">{"  display:"}</span>
-          <span className="property_value">{"flex;"}</span>
-          {"\n"}
-          <span className="property_style">{"  flex-direction:"}</span>
-          <span className="property_value">{"column;"}</span>
-          {"\n"}
-          <span className="property_style">{"}"}</span>
+          {GenerateSnippet()}
+          <span className="property_style">{"\n}"}</span>
         </pre>
       </code>
       <span id="lang_highlight">css</span>

@@ -5,6 +5,45 @@ import { PromptScreen } from './Screens/PromptScreen';
 import { Snippet } from './Components/Snippet';
 
 function App() {
+  const cssProperties = [
+    {
+        cssProp: "color",
+        cssValue: "red"
+    },
+    {
+        cssProp: "font-family",
+        cssValue: "Arial"
+    },
+    {
+        cssProp: "background-color",
+        cssValue: "lightblue"
+    },
+    {
+        cssProp: "font-size",
+        cssValue: "16px"
+    },
+    {
+        cssProp: "margin",
+        cssValue: "10px"
+    },
+    {
+        cssProp: "padding",
+        cssValue: "20px"
+    },
+    {
+        cssProp: "border",
+        cssValue: "1px solid black"
+    },
+    {
+        cssProp: "text-align",
+        cssValue: "center"
+    },
+    {
+        cssProp: "display",
+        cssValue: "flex"
+    }
+    // Add more elements here
+];
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +59,7 @@ function App() {
         >
           Learn React
         </a>
-        <Snippet/>
+        <Snippet CssProperties={cssProperties}/>
       </header>
     <PromptScreen/>
     </div>
