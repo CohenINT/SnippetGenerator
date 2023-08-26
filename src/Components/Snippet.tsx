@@ -1,18 +1,28 @@
 import './Snippet.css';
 
 interface CssDictionary {
-  [key: string]: string | number;
+  cssProp: string;
+  cssValue: string | number;
 }
 interface SnippetProps {
-  CssProperties:CssDictionary;
+  CssProperties: CssDictionary[];
 }
 
 export const Snippet: React.FC<SnippetProps> = (props) => {
 
-  const GenerateSnippet = ()=>{
+  const GenerateSnippet = () => {
 
-    
+   return  props.CssProperties.map((p,i) => {
+      return (
+        <>
+         <span className="property_style">{`  ${p.cssProp}:`}</span>
+         <span className="property_value">{`${p.cssValue};`}</span>
+         { i < props.CssProperties.length-1 ? "\n" : ""}
+        </>);
+    });
   };
+
+   
 
   return (
     <div className="snippet_cont">
@@ -20,7 +30,7 @@ export const Snippet: React.FC<SnippetProps> = (props) => {
       <code>
         <pre>
           <span className="class_style">{".container "}</span>
-          <span  className="property_style">{"{"}</span>
+          <span className="property_style">{"{"}</span>
           {"\n"}
           <span className="property_style">{"  background-color:"} </span>
           <span className="property_value">{"red;"}</span>
