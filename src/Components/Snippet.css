@@ -1,0 +1,60 @@
+:root{
+   --class-color:#f5d67b;
+   --cssprop-color:#72e0d1;
+   --langhighlight-color:#ff7a18;
+}
+
+.snippet_cont{
+    width: auto;
+    padding-left: 1%;
+    text-align: left;
+    position: relative;
+    padding-right: 1%;
+    height: auto;
+    padding-top:0.2%;
+    padding-bottom: 0.1%;
+    place-items: center;
+    background-color: #1b1b1b;
+    border-radius: 12px;
+    font-size:16px;
+    display: inline-flex;
+}
+
+.class_style{
+    color:var(--class-color);
+}
+
+.property_style{
+    color:var(--cssprop-color);
+    margin-bottom: 3%;
+    display: inline-flex;
+}
+
+.property_value{
+    color:var(--class-color);
+}
+#lang_highlight
+{
+    place-self: start;
+    color:var(--langhighlight-color);
+}
+
+.copy_btn{
+    display: block;
+    position: absolute;
+    right: 0;
+    margin-top: 70%;
+    margin-right: 3%;
+    font-size: 11px;
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 6%;
+    color: var(--class-color);
+    font-family: sans-serif;
+    padding: 0.5rem;
+
+}
+
+.copy_btn:active{
+    border-color: var(--class-color);
+}
