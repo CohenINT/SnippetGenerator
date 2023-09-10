@@ -64,9 +64,7 @@ export const Snippet: React.FC<SnippetProps> = (props) => {
       <button onClick={HandleCopyClick.bind(this)} className="copy_btn">
         Copy
       </button>
-      <div id="snippet_code">
-
-      </div>
+      
     </div>
   );
 };
